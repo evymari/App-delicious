@@ -1,7 +1,8 @@
-package dto;
+package com.f5.delicious.dto;
 
+import com.f5.delicious.entity.Creator;
 import jakarta.validation.constraints.*;
-import entity.Dessert;
+import com.f5.delicious.entity.Dessert;
 
 public record RequestDessertDto(
         @NotBlank(message = "Name cannot be empty")
@@ -22,9 +23,18 @@ public record RequestDessertDto(
         @NotBlank(message = "Image URL cannot be empty")
         @Pattern(regexp = "^(https?:\\/\\/)?([\\w\\-]+\\.)+[\\w\\-]+(\\/[\\w\\-\\.]+)*\\.(jpg|gif|png)$",
                 message = "Image must be a valid URL ending with .jpg, .gif, or .png")
-        String image
-) {
-    public Dessert toEntity() {
-        return new Dessert(this.name, this.description, this.countryOfOrigin, this.ingredients, this.image);
+        String image,
+Long creatorId)
+{
+    public Dessert toEntity( Creator creator) {
+        return new Dessert(
+                this.name,
+                this.description,
+                this.countryOfOrigin,
+                this.ingredients,
+                this.image,
+                 creator
+        );
     }
 }
+
