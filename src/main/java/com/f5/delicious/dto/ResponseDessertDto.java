@@ -1,6 +1,6 @@
 package com.f5.delicious.dto;
 
-/*import com.f5.delicious.entity.Dessert;
+import com.f5.delicious.entity.Dessert;
 
 public record ResponseDessertDto (Long id, String name, String description, String  countryOfOrigin, String ingredients) {
     public static ResponseDessertDto fromEntity(Dessert dessert) {
@@ -15,4 +15,3 @@ public record ResponseDessertDto (Long id, String name, String description, Stri
         );
     }
 }
-*/

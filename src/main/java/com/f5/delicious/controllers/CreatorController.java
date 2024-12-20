@@ -50,6 +50,7 @@ public class CreatorController {
         return new ResponseEntity<>(updatedCreator, HttpStatus.OK);
     }
 
+
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteCreatorById(@PathVariable Long id) {
         CREATOR_SERVICES.deleteCreatorById(id);

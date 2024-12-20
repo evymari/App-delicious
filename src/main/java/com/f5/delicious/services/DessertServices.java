@@ -1,10 +1,11 @@
 package com.f5.delicious.services;
-/*
+
 import com.f5.delicious.dto.RequestDessertDto;
 import com.f5.delicious.dto.ResponseDessertDto;
 import com.f5.delicious.entity.Dessert;
 import com.f5.delicious.entity.Creator;
-import com.f5.delicious.exceptions.NoDessertsFoundException;
+import com.f5.delicious.exceptions.NoDessertFoundException;
+
 import com.f5.delicious.exceptions.NoIdFoundBadRequestException;
 import com.f5.delicious.exceptions.NoIdFoundException;
 import com.f5.delicious.exceptions.NoRegistersFoundException;
@@ -82,10 +83,10 @@ public class DessertServices {
     public List<ResponseDessertDto> findDessertsByCreatorId(Long creatorId) {
         List<Dessert> desserts = DESSERT_REPOSITORY.findByCreatorId(creatorId);
         if (desserts.isEmpty()) {
-            throw new NoDessertsFoundException(creatorId);
+            throw new NoDessertFoundException(creatorId);
         }
         return desserts.stream()
                 .map(ResponseDessertDto::fromEntity)
                 .toList();
     }
-}*/
+}

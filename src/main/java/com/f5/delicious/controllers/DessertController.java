@@ -1,5 +1,5 @@
 package com.f5.delicious.controllers;
-/*
+
 import com.f5.delicious.dto.RequestDessertDto;
 import com.f5.delicious.dto.ResponseDessertDto;
 import com.f5.delicious.repository.CreatorRepository;
@@ -13,7 +13,7 @@ import com.f5.delicious.services.DessertServices;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/dessert")
+@RequestMapping("/dessert")
 public class DessertController {
 
     private final DessertRepository DESSERT_REPOSITORY;
@@ -61,4 +61,4 @@ public class DessertController {
         DESSERT_SERVICES.deleteDessertById(id);
         return new ResponseEntity<>("Dessert has been deleted.", HttpStatus.OK);
     }
-}*/
+}
