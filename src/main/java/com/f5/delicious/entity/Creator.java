@@ -26,6 +26,12 @@ public class Creator {
 
     public Creator() {}
 
+    public Creator(long l, String alice, String mail) {
+    }
+
+    public Creator(long l, String existingCreator, String mail, String duplicatedPhone, String s) {
+    }
+
     public String getName() {
         return name;
     }
